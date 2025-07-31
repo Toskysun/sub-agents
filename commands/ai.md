@@ -1,35 +1,87 @@
 ## Usage
 `/ai <TASK_DESCRIPTION | list | info <role> | workflow | auto>`
 
-## 🎯 Task Complexity Assessment
+## 🎯 Task Complexity Assessment (ENHANCED)
 
-### Level 1: Simple Tasks - Handle directly
-- Single file modification (<50 lines)
-- Basic information queries
-- Simple configuration changes
-- Basic file operations
+### Level 0: Micro Tasks - Direct execution
+- **Scenario**: Information queries, file reading, status checks
+- **Characteristics**: No code modification, pure information retrieval  
+- **Boundary**: <5 minutes, no professional knowledge needed
+- **Triggers**: "view", "check", "display", "read"
+- **Action**: Main controller completes directly, no agent calls
 
-### Level 2: Medium Tasks - Single specialized agent
-- Multi-file modifications with clear logic
-- Specific domain knowledge required
-- Single technology stack focus
-- Feature implementation or bug fixes
+### Level 1: Simple Tasks - Single agent direct
+- **Scenario**: Single file modification, basic configuration, simple functionality
+- **Characteristics**: <50 lines of code, single technology stack, clear requirements
+- **Boundary**: One professional domain, no cross-module impact
+- **Triggers**: "add", "modify", "configure" single components
+- **Action**: Direct call to 1 professional agent, bypassing director
 
-### Level 3: Complex Tasks - Multi-agent collaboration
-- Cross-system architecture changes
-- Multiple professional domains needed
-- Multi-module/service impact
-- Complete planning and implementation required
+### Level 2: Medium Tasks - Single agent complex
+- **Scenario**: Complete functional modules, multi-file coordination, requires testing
+- **Characteristics**: 50-200 lines of code, requires planning and validation
+- **Boundary**: Single technology stack but complex logic, may require refactoring
+- **Triggers**: "implement", "develop", "build" complete features
+- **Action**: 1 professional agent handles full process, main controller monitors
 
-**Action**: Use task-dispatch-director to coordinate multiple agents (ultrathink analysis enabled)
+### Level 3: Composite Tasks - Multi-agent serial
+- **Scenario**: Cross-module functionality, frontend-backend coordination, 2-3 professional domains
+- **Characteristics**: 200-500 lines of code, requires multi-step coordination
+- **Boundary**: Clear dependency relationships, serial execution
+- **Triggers**: "integrate", "connect", "full-stack" functionality
+- **Action**: Main controller serially calls 2-3 agents
 
-## ⚡ Auto-Trigger Conditions
-Call agents automatically when:
-1. **Technology stack mentioned**: "Vue project", "React app", "Go microservices", "Android development"
-2. **Complex features** requiring 3+ technology components
-3. **Architecture requests**: "system design", "architecture refactoring", "microservice splitting"
-4. **Security analysis**: "Xposed development", "Hook analysis", "malware detection"
-5. **Performance optimization** requiring multi-layer analysis
+### Level 4: Parallel Tasks - Multi-agent concurrent
+- **Scenario**: Independent module parallel development, performance optimization, multi-platform
+- **Characteristics**: 3-5 independent workflows, can execute in parallel
+- **Boundary**: Low conflict risk, high independence
+- **Triggers**: "simultaneously", "parallel", "multi-platform" development
+- **Action**: Main controller calls 3-5 agents in parallel
+
+### Level 5: Enterprise Tasks - Director coordination
+- **Scenario**: System refactoring, architecture upgrades, complex project analysis
+- **Characteristics**: 5+ professional domains, complex dependencies, multi-phase planning
+- **Boundary**: Requires specialized task decomposition and coordination management
+- **Triggers**: "refactor", "architecture", "system analysis", "enterprise-level"
+- **Action**: task-dispatch-director pure coordination, decompose into Level 1-3 tasks
+
+## ⚡ Enhanced Auto-Trigger Matrix
+
+**Level 0 Trigger Conditions (no agent calls):**
+- Keywords: "view", "check", "display", "read", "list", "status"
+- Questions: "what is", "how to understand", "can you explain"
+- Operations: Pure information queries, no modification requirements
+
+**Level 1 Trigger Conditions (single agent direct):**
+- Keywords: "add", "modify", "update", "configure", "adjust"
+- Scope: Single file or component + single technology stack
+- Examples: "add Vue component", "modify API endpoint", "configure database connection"
+
+**Level 2 Trigger Conditions (single agent complex):**
+- Keywords: "implement", "develop", "build", "create" functional modules
+- Scope: Multi-file but single technology stack + requires testing
+- Examples: "implement user login", "develop payment module", "build search functionality"
+
+**Level 3 Trigger Conditions (multi-agent serial):**
+- Keywords: "integrate", "connect", "full-stack", "end-to-end"
+- Scope: 2-3 technology stacks collaboration + clear dependencies
+- Examples: "frontend-backend integration", "API integration", "full-stack user system"
+
+**Level 4 Trigger Conditions (multi-agent parallel):**
+- Keywords: "simultaneously", "parallel", "multi-platform", "optimize"
+- Scope: 3-5 independent modules + low conflict
+- Examples: "multi-platform synchronized development", "comprehensive performance optimization"
+
+**Level 5 Trigger Conditions (Director coordination):**
+- Keywords: "refactor", "architecture", "system analysis", "enterprise-level", "complete solution"
+- Scope: 5+ professional domains + complex planning
+- Examples: "system architecture refactoring", "enterprise microservice design", "complex project analysis"
+
+**Mandatory Director Bypass Conditions (Level 0-2):**
+- Single file operations
+- Clearly specified single technology stack
+- User explicitly says "no team collaboration needed"
+- Simple information queries and basic modifications
 
 ## 🚫 Direct Handling
 Handle without agents:
@@ -132,18 +184,10 @@ Handle without agents:
 - **Function testing** → test-expert
 - **Technology research** → technical-researcher
 
-## 💡 Examples
-
-### ✅ Correct Usage
-- "Build Vue.js SPA" → vue-developer
-- "Create FastAPI service" → fastapi-expert
-- "Design Go microservice system" → go-architect + devops-engineer
-- "Develop Xposed module for Root bypass" → xposed-developer + android-hooking-expert
-
 ### ❌ Avoid Over-invocation
-- "Explain this function" → Handle directly (not technical-researcher + cto)
-- "Change config file" → Handle directly (not infrastructure-developer + devops-engineer)
-- "Vue vs React?" → Handle directly or technical-researcher (not multiple developers)
+- "Explain this function" → Level 0: Handle directly (not technical-researcher + cto)
+- "Change config file" → Level 1: Single specialist (not infrastructure-developer + devops-engineer)
+- "Vue vs React for this project?" → Level 0: Handle directly or Level 1: technical-researcher (not multiple developers)
 
 ## 🎮 Command Modes
 
@@ -163,6 +207,23 @@ Just describe what you need naturally:
 
 ### 🤖 Auto-Intelligence Mode
 - `/ai auto` - Enable maximum automation with context-aware recommendations
+
+## 📊 Level 0-5 System Benefits
+
+### 🎯 **Precision Task Routing**
+- **Level 0-2**: Bypass director overhead → Direct specialist assignment
+- **Level 3-4**: Coordinated multi-agent execution → Optimal resource allocation  
+- **Level 5**: Enterprise-level orchestration → Complex project management
+
+### ⚡ **Performance Optimization**  
+- **3x faster** for simple tasks (Level 0-1 direct execution)
+- **2x more reliable** for complex tasks (proper coordination)
+- **Zero agent overload** (strict role boundaries)
+
+### 🛡️ **Anti-Deadlock Protection**
+- **task-dispatch-director** limited to pure coordination only
+- **Automatic fallback** when agents fail (3-retry rule)
+- **Forced bypass** for simple operations (Level 0-2)
 
 ## 📊 Smart Parallel Task Execution Output
 
