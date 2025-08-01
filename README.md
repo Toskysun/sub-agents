@@ -17,12 +17,14 @@
 
 ## 🚀 Overview
 
-This repository contains a powerful collection of specialized AI agents designed to enhance your Claude Code development experience. Each agent is crafted with deep domain expertise to handle specific technology stacks and development tasks.
+This repository contains a powerful collection of specialized AI agents designed to enhance your Claude Code development experience. Each agent is crafted with deep domain expertise and **strict boundary enforcement** to handle specific technology stacks and development tasks efficiently.
 
 ## 🎯 Key Features
 
 - **Enhanced Task Assessment**: 6-level (0-5) complexity evaluation with ultra-intelligent analysis (ultrathink mode)
-- **28 Specialized Agents**: Comprehensive coverage of modern development technologies
+- **28+ Specialized Agents**: Comprehensive coverage of modern development technologies with strict role boundaries
+- **Agent Boundary System**: ALLOWED/FORBIDDEN pattern preventing scope creep and ensuring precision
+- **Dependency-Aware Execution**: Smart dependency detection with phase-based execution strategies
 - **Multi-Technology Support**: Vue.js, React, Go, Rust, Python, Android, Java, Security, and more
 - **Production Ready**: Battle-tested configurations optimized for real-world development
 - **Performance Optimized**: 3x faster simple tasks, 2x more reliable complex coordination
@@ -63,38 +65,54 @@ claude-ai-agents/
 
 ## 🤖 Available Agents
 
-### Frontend Development
-- **vue-developer**: Vue.js 3, Composition API, Nuxt.js, Pinia
-- **react-developer**: React 18, Next.js, Redux Toolkit, Server Components
-- **frontend-developer**: General frontend development and UI frameworks
-- **google-ui-designer**: Material Design 3, Accessibility, Design Systems
+### 🧠 Analysis Agents (NO CODE EXECUTION)
+*Strict Constraints: Analyze and report only. Cannot execute code or implement solutions.*
 
-### Backend & Systems
+- **technical-solution-architect**: Designs technical solutions and creates implementation roadmaps
+- **technical-researcher**: Investigates technologies and provides research reports  
+- **code-review-expert**: Analyzes code quality and identifies issues (cannot fix problems)
+
+### 💻 Development Agents (DOMAIN-SPECIFIC EXECUTION)
+*Strict Constraints: Execute code only within specific technology domains.*
+
+#### Frontend Specialists
+- **vue-developer**: Vue.js 3, Composition API, Nuxt.js, Pinia (Vue ecosystem only)
+- **react-developer**: React 18, Next.js, Redux Toolkit, Server Components (React ecosystem only)
+- **frontend-developer**: General frontend development and UI frameworks
+
+#### Backend Specialists  
+- **backend-developer**: Multi-stack API development (FastAPI/Spring Boot/Node.js) - server-side only
 - **go-architect**: Go microservices, distributed systems, cloud-native
 - **rust-architect**: Systems programming, performance optimization, memory safety
 - **flask-expert**: Python Flask web applications and REST APIs
 - **fastapi-expert**: Async Python APIs, automatic documentation
 - **java-developer**: Enterprise Java development and Spring Boot
 - **spring-architect**: Spring ecosystem, microservices architecture
-- **backend-developer**: Database design, API development, business logic
 
-### Mobile & Android
+#### Mobile & Design
 - **android-developer**: Native Android apps, Kotlin, Architecture Components
 - **mobile-ui-designer**: Mobile UX/UI, responsive design, platform guidelines
+- **google-ui-designer**: Material Design 3, Accessibility, Design Systems
 
-### Security & Analysis
+#### Infrastructure & DevOps
+- **devops-engineer**: Docker containerization and deployment (infrastructure only)
+- **infrastructure-developer**: Build tools, CI/CD pipelines, automation scripts
+
+### 🔐 Security & Analysis Specialists
 - **android-hooking-expert**: Frida, dynamic analysis, runtime manipulation
 - **xposed-developer**: Xposed modules, system-level modifications
 - **reverse-engineer**: Static analysis, decompilation, vulnerability research
 - **malware-analyst**: Threat detection, behavioral analysis, incident response
 
-### Automation & Scripting
+### 🌙 Automation & Scripting
 - **lua-developer**: Game scripting, automation, OpenResty web development
 
-### Quality & Operations
-- **code-review-expert**: Security audits, best practices, code quality
-- **test-expert**: Testing strategies, automation, quality assurance
-- **devops-engineer**: CI/CD, containerization, deployment automation
+### 🔧 Quality Agents (ANALYSIS AND GUIDANCE)
+*Strict Constraints: Provide guidance and coordination but cannot implement solutions.*
+
+- **qa-engineer**: Testing strategy and quality analysis (cannot write production code)
+- **test-expert**: Testing framework design and strategy (cannot implement business logic)
+- **task-dispatch-director**: Pure coordination only (⚠️ Never calls itself)
 
 ## 🛠 Quick Start
 
@@ -154,11 +172,29 @@ claude-ai-agents/
 
 ## 🚀 Advanced Features
 
+### 🎯 Agent Boundary System 
+- **ALLOWED/FORBIDDEN Pattern**: Explicit constraints preventing scope creep
+- **Domain-Specific Execution**: Agents work only within their expertise areas  
+- **Delegation Requirements**: Mandatory handoffs when tasks exceed boundaries
+- **Anti-Over-Engineering**: Prevents unnecessary multi-agent invocations
+
+### 📊 Dependency-Aware Execution
+- **Smart Dependency Analysis**: Automatic detection of task prerequisites
+- **Phase-Based Execution**: Serial execution for dependent tasks, parallel for independent
+- **Context Handoffs**: Proper information flow between execution phases
+- **Selective Parallelism**: Maximum speedup while maintaining safety
+
+### ⚡ Performance Optimization  
 - **Level 0-5 Task Classification**: Precision routing from micro-tasks to enterprise coordination
-- **Performance Optimization**: 3x faster simple tasks, 2x more reliable complex coordination
+- **3x faster simple tasks**: Direct execution bypasses unnecessary overhead
+- **2x more reliable complex coordination**: Proper dependency management
 - **Automatic Fallback**: 3-retry system with intelligent agent reassignment
+
+### 🛡️ Quality & Safety
+- **Anti-Deadlock Protection**: task-dispatch-director limited to pure coordination
 - **Quality Gates**: Built-in code review and testing workflows
-- **Scalable Architecture**: Easily extensible with new agents
+- **TodoWrite Strategy**: Level-appropriate task tracking and management
+- **Boundary Enforcement**: Strict agent role compliance with violation detection
 
 ## 📖 Documentation
 
@@ -183,12 +219,14 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## 🚀 概述
 
-这个仓库包含了一套强大的专业AI代理集合，旨在增强您的Claude Code开发体验。每个代理都具备深度领域专业知识，能够处理特定的技术栈和开发任务。
+这个仓库包含了一套强大的专业AI代理集合，旨在增强您的Claude Code开发体验。每个代理都具备深度领域专业知识和**严格的边界约束**，能够高效地处理特定的技术栈和开发任务。
 
 ## 🎯 核心特性
 
 - **增强任务评估**: 6级 (0-5) 复杂度评估与超智能分析 (ultrathink模式)
-- **28个专业代理**: 全面覆盖现代开发技术栈
+- **28+个专业代理**: 全面覆盖现代开发技术栈，配备严格的角色边界
+- **代理边界系统**: ALLOWED/FORBIDDEN模式防止职责蔓延，确保精准执行
+- **依赖感知执行**: 智能依赖检测与基于阶段的执行策略
 - **多技术栈支持**: Vue.js、React、Go、Rust、Python、Android、Java、安全分析等
 - **生产就绪**: 经过实战测试的配置，为真实世界开发优化
 - **性能优化**: 简单任务3倍速度提升，复杂协调2倍可靠性提升
@@ -229,38 +267,54 @@ claude-ai-agents/
 
 ## 🤖 可用代理
 
-### 前端开发
-- **vue-developer**: Vue.js 3、组合式API、Nuxt.js、Pinia
-- **react-developer**: React 18、Next.js、Redux Toolkit、Server Components
-- **frontend-developer**: 通用前端开发和UI框架
-- **google-ui-designer**: Material Design 3、无障碍性、设计系统
+### 🧠 分析型代理 (禁止代码执行)
+*严格约束：只能分析和报告，不能执行代码或实现解决方案。*
 
-### 后端与系统
+- **technical-solution-architect**: 设计技术解决方案并创建实施路线图
+- **technical-researcher**: 调研技术并提供研究报告
+- **code-review-expert**: 分析代码质量并识别问题（无法修复问题）
+
+### 💻 开发型代理 (域专属执行)
+*严格约束：只能在特定技术领域内执行代码。*
+
+#### 前端专家
+- **vue-developer**: Vue.js 3、组合式API、Nuxt.js、Pinia（仅Vue生态系统）
+- **react-developer**: React 18、Next.js、Redux Toolkit、Server Components（仅React生态系统）
+- **frontend-developer**: 通用前端开发和UI框架
+
+#### 后端专家
+- **backend-developer**: 多栈API开发（FastAPI/Spring Boot/Node.js）- 仅服务端
 - **go-architect**: Go微服务、分布式系统、云原生
 - **rust-architect**: 系统编程、性能优化、内存安全
 - **flask-expert**: Python Flask Web应用和REST API
 - **fastapi-expert**: 异步Python API、自动文档生成
 - **java-developer**: 企业级Java开发和Spring Boot
 - **spring-architect**: Spring生态系统、微服务架构
-- **backend-developer**: 数据库设计、API开发、业务逻辑
 
-### 移动端与Android
+#### 移动端与设计
 - **android-developer**: 原生Android应用、Kotlin、架构组件
 - **mobile-ui-designer**: 移动端UX/UI、响应式设计、平台指南
+- **google-ui-designer**: Material Design 3、无障碍性、设计系统
 
-### 安全与分析
+#### 基础设施与DevOps
+- **devops-engineer**: Docker容器化和部署（仅基础设施）
+- **infrastructure-developer**: 构建工具、CI/CD管道、自动化脚本
+
+### 🔐 安全与分析专家
 - **android-hooking-expert**: Frida、动态分析、运行时操控
 - **xposed-developer**: Xposed模块、系统级修改
 - **reverse-engineer**: 静态分析、反编译、漏洞研究
 - **malware-analyst**: 威胁检测、行为分析、事件响应
 
-### 自动化与脚本
+### 🌙 自动化与脚本
 - **lua-developer**: 游戏脚本、自动化、OpenResty Web开发
 
-### 质量与运维
-- **code-review-expert**: 安全审计、最佳实践、代码质量
-- **test-expert**: 测试策略、自动化、质量保证
-- **devops-engineer**: CI/CD、容器化、部署自动化
+### 🔧 质量型代理 (分析和指导)
+*严格约束：提供指导和协调但不能实现解决方案。*
+
+- **qa-engineer**: 测试策略和质量分析（无法编写生产代码）
+- **test-expert**: 测试框架设计和策略（无法实现业务逻辑）
+- **task-dispatch-director**: 纯粹协调（⚠️ 绝不调用自身）
 
 ## 🛠 快速开始
 
@@ -320,11 +374,29 @@ claude-ai-agents/
 
 ## 🚀 高级特性
 
+### 🎯 代理边界系统
+- **ALLOWED/FORBIDDEN模式**: 明确约束防止职责蔓延
+- **域专属执行**: 代理只在其专业领域内工作  
+- **委托要求**: 任务超出边界时强制交接
+- **反过度工程**: 防止不必要的多代理调用
+
+### 📊 依赖感知执行
+- **智能依赖分析**: 自动检测任务先决条件
+- **基于阶段的执行**: 依赖任务串行执行，独立任务并行执行
+- **上下文交接**: 执行阶段间的适当信息流
+- **选择性并行**: 在保证安全的前提下最大化速度提升
+
+### ⚡ 性能优化
 - **Level 0-5 任务分类**: 从微任务到企业级协调的精准路由
-- **性能优化**: 简单任务3倍速度提升，复杂协调2倍可靠性
+- **简单任务3倍速度提升**: 直接执行绕过不必要的开销
+- **复杂协调2倍可靠性**: 适当的依赖管理
 - **自动回退**: 3次重试系统配合智能代理重新分配
+
+### 🛡️ 质量与安全
+- **反死锁保护**: task-dispatch-director限制为纯粹协调
 - **质量门禁**: 内置代码审查和测试工作流
-- **可扩展架构**: 易于扩展新代理
+- **TodoWrite策略**: 级别适当的任务跟踪和管理
+- **边界执行**: 严格的代理角色合规性与违规检测
 
 ## 📖 文档
 
