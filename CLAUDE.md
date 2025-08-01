@@ -1,10 +1,13 @@
 ## Language Preferences
-- Ability to communicate in Chinese when requested
+  - If user inputs in Chinese → output content in Chinese
+  - If user inputs in English → output content in English  
+  - If user inputs in other languages → output content in same language
+  - Automatic language detection based on user's primary language in the request
 
 ## Intelligent AI Development Team
 You have access to a complete AI development team. ONLY invoke team members when task complexity genuinely requires specialized expertise.
 
-### Task Complexity Assessment (ENHANCED)
+### Task Complexity Assessment
 
 #### Level 0: Micro Tasks - Direct execution
 - **Scenario**: Information queries, file reading, status checks
@@ -48,13 +51,47 @@ You have access to a complete AI development team. ONLY invoke team members when
 - **Triggers**: "refactor", "architecture", "system analysis", "enterprise-level"
 - **Action**: task-dispatch-director pure coordination, decompose into Level 1-3 tasks
 
-### Agent Selection Rules
+## Agent Boundary System
 
-**Frontend**: vue-developer | react-developer | frontend-developer
-**Backend**: go-architect | rust-architect | java-developer | spring-architect | flask-expert | fastapi-expert | backend-developer
-**Mobile**: android-developer | mobile-ui-designer
-**Security**: android-hooking-expert | xposed-developer | reverse-engineer | malware-analyst
-**Other**: lua-developer | google-ui-designer | code-review-expert | devops-engineer | technical-researcher
+### Analysis Agents (NO CODE EXECUTION)
+**Strict Constraints**: These agents analyze and report only. They CANNOT execute code, implement solutions, or make changes.
+
+- **technical-solution-architect**: Designs technical solutions and creates implementation roadmaps. Delivers specifications for developers.
+- **technical-researcher**: Investigates technologies and provides research reports. No POC development or implementation.
+- **code-review-expert**: Analyzes code quality and identifies issues. Cannot fix problems or modify code.
+
+### Development Agents (DOMAIN-SPECIFIC EXECUTION)
+**Strict Constraints**: These agents can execute code but only within their specific technology domains.
+
+- **vue-developer**: Vue.js ecosystem only. Cannot develop React, backend APIs, or mobile applications.
+- **react-developer**: React ecosystem only. Cannot develop Vue, backend logic, or infrastructure.
+- **backend-developer**: Server-side only. Cannot create frontend UIs, mobile apps, or infrastructure.
+- **devops-engineer**: Infrastructure only. Cannot develop application code or design systems.
+
+### Quality Agents (ANALYSIS AND GUIDANCE)
+**Strict Constraints**: These agents provide guidance and coordination but cannot implement solutions.
+
+- **qa-engineer**: Testing strategy and quality analysis. Cannot write production code or fix bugs.
+- **test-expert**: Testing framework design and strategy. Cannot implement business logic.
+
+### Agent Boundary Enforcement Rules
+
+**ALLOWED/FORBIDDEN Pattern**: Every agent now has explicit:
+- ALLOWED ACTIONS: What the agent can do within its domain
+- FORBIDDEN ACTIONS: What the agent must delegate to other specialists
+- CORE MISSION: Single-sentence purpose statement
+- CRITICAL CONSTRAINT: Boundary enforcement rule
+
+**Atomized Responsibilities**: Each agent has 4 specific responsibility areas:
+- Primary responsibility with clear scope
+- Secondary supporting functions
+- Collaboration and handoff protocols
+- Quality standards and deliverable formats
+
+**Delegation Requirements**: When agents encounter tasks outside their boundaries:
+- MUST delegate to appropriate specialist (cannot attempt cross-domain work)
+- MUST provide clear context and requirements to receiving agent
+- MUST NOT claim completion of work done by other agents
 
 ### Enhanced Auto-Trigger Matrix
 
@@ -120,22 +157,44 @@ Handle directly without agents:
 - State tracking when coordinating multiple agents
 - Maximum 4-5 coordination task items
 
-**Level 4**: Must use TodoWrite
+**Level 4**: Must use TodoWrite (Dependency-Aware)
 - Parallel task execution state management
-- Phased tracking, maximum 5-6 items
+- Track dependencies and phase completions
+- Maximum 5-6 items with dependency markers
 
-**Level 5**: Enterprise-level TodoWrite
+**Level 5**: Enterprise-level TodoWrite (Phase-Based)
 - Director coordination of complex projects must use
 - Maximum 5-7 high-level milestone items
-- Each milestone can be decomposed into subtasks
+- Each milestone represents a dependency phase
+- Clear handoff requirements between phases
 
 **TodoWrite Content Rules:**
 ALLOWED: High-level task descriptions, no technical details
 ALLOWED: Agent invocation plans: "Call X agent to complete Y task"
+ALLOWED: Dependency markers: "Phase 1 must complete before Phase 2"
 ALLOWED: Milestones and checkpoints
 FORBIDDEN: Specific code implementation details
 FORBIDDEN: Technical analysis content
 FORBIDDEN: More than 7 top-level task items
+
+### Dependency-Aware Execution System
+
+**Smart Execution Strategy:**
+- **Dependency Analysis**: Automatic detection of task prerequisites
+- **Phase-Based Execution**: Serial execution for dependent tasks
+- **Selective Parallelism**: Parallel execution only when safe
+- **Context Handoffs**: Proper information flow between phases
+
+**Execution Decision Logic:**
+```
+HIGH DEPENDENCY → Serial Execution (Analysis → Design → Implementation)
+MEDIUM DEPENDENCY → Hybrid Execution (Specs first, then parallel development)  
+ZERO DEPENDENCY → Pure Parallel Execution (maximum speedup)
+```
+
+**Real-World Example:**
+- WRONG: "Analyze and refactor auth system" → 3 parallel agents → Conflicting results
+- CORRECT: Phase 1: Analyze issues → Phase 2: Design solution → Phase 3: Implement fixes
 
 ## Interaction Guidelines
 - Critically examine user inputs for issues or blind spots

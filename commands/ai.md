@@ -1,7 +1,7 @@
 ## Usage
 `/ai <TASK_DESCRIPTION | list | info <role> | workflow | auto>`
 
-## 🎯 Task Complexity Assessment (ENHANCED)
+## 🎯 Task Complexity Assessment
 
 ### Level 0: Micro Tasks - Direct execution
 - **Scenario**: Information queries, file reading, status checks
@@ -45,7 +45,7 @@
 - **Triggers**: "refactor", "architecture", "system analysis", "enterprise-level"
 - **Action**: task-dispatch-director pure coordination, decompose into Level 1-3 tasks
 
-## ⚡ Enhanced Auto-Trigger Matrix
+## ⚡ Auto-Trigger Matrix
 
 **Level 0 Trigger Conditions (no agent calls):**
 - Keywords: "view", "check", "display", "read", "list", "status"
@@ -145,85 +145,19 @@ Handle without agents:
 - 🐛 **qa-engineer** - Problem diagnosis, root cause analysis
 - 🔬 **technical-researcher** - Technical research, feasibility analysis
 
-## 📖 Quick Reference
-
-### 🎨 Frontend Development
-- **Vue.js applications** → vue-developer
-- **React modern development** → react-developer
-- **General frontend development** → frontend-developer
-- **Material Design** → google-ui-designer
-- **Mobile UI design** → mobile-ui-designer
-
-### 💾 Backend Development
-- **Go microservice architecture** → go-architect
-- **Rust system programming** → rust-architect
-- **Java enterprise development** → java-developer
-- **Spring microservices** → spring-architect
-- **Flask web applications** → flask-expert
-- **FastAPI high-performance APIs** → fastapi-expert
-- **General API development** → backend-developer
-
-### 📱 Mobile Development
-- **Android application development** → android-developer
-- **Mobile interface design** → mobile-ui-designer
-
-### 🔐 Security & Analysis
-- **Android Hook technology** → android-hooking-expert
-- **Xposed module development** → xposed-developer
-- **Code reverse analysis** → reverse-engineer
-- **Malware analysis** → malware-analyst
-
-### 🌙 Scripting & Automation
-- **Lua script development** → lua-developer (game/web/automation)
-
-### 🔧 Quality & Operations
-- **Automated tasks** → infrastructure-developer
-- **Production deployment** → devops-engineer
-- **Problem fixing** → qa-engineer
-- **Code review** → code-review-expert
-- **Function testing** → test-expert
-- **Technology research** → technical-researcher
-
-### ❌ Avoid Over-invocation
-- "Explain this function" → Level 0: Handle directly (not technical-researcher + cto)
-- "Change config file" → Level 1: Single specialist (not infrastructure-developer + devops-engineer)
-- "Vue vs React for this project?" → Level 0: Handle directly or Level 1: technical-researcher (not multiple developers)
-
 ## 🎮 Command Modes
 
-### 🎯 Task Execution Mode (Default)
-Just describe what you need naturally:
+### 🎯 Task Execution (Default)
 ```
-/ai "Add remember password feature to login page"
-/ai "API response is too slow, need performance optimization" 
+/ai "Add login feature"
+/ai "Optimize API performance" 
 /ai "Code review recent commits"
-/ai "Research whether to upgrade to React 19"
 ```
 
-### 📚 Information Mode
-- `/ai list` - Show all team members with descriptions
-- `/ai info <role>` - Get detailed information about specific role
-- `/ai workflow` - Display development workflows and best practices
-
-### 🤖 Auto-Intelligence Mode
-- `/ai auto` - Enable maximum automation with context-aware recommendations
-
-## 📊 Level 0-5 System Benefits
-
-### 🎯 **Precision Task Routing**
-- **Level 0-2**: Bypass director overhead → Direct specialist assignment
-- **Level 3-4**: Coordinated multi-agent execution → Optimal resource allocation  
-- **Level 5**: Enterprise-level orchestration → Complex project management
-
-### ⚡ **Performance Optimization**  
-- **3x faster** for simple tasks (Level 0-1 direct execution)
-- **2x more reliable** for complex tasks (proper coordination)
-- **Zero agent overload** (strict role boundaries)
-
-### 🛡️ **Anti-Deadlock Protection**
-- **task-dispatch-director** limited to pure coordination only
-- **Automatic fallback** when agents fail (3-retry rule)
-- **Forced bypass** for simple operations (Level 0-2)
+### 📚 Information
+- `/ai list` - Show all team members
+- `/ai info <role>` - Get role details
+- `/ai auto` - Enable maximum automation
 
 ## 📊 Smart Parallel Task Execution Output
 
@@ -282,7 +216,24 @@ Phase 2 (Parallel): [2 agents] → [Build on Phase 1 results]
 - Total execution time: 12 minutes (vs 49 minutes serial estimate)
 ```
 
-## 🚀 Benefits
+## 🚀 System Benefits
+
+### 🎯 **Precision Task Routing**
+- **Level 0-2**: Bypass director overhead → Direct specialist assignment
+- **Level 3-4**: Coordinated multi-agent execution → Optimal resource allocation  
+- **Level 5**: Enterprise-level orchestration → Complex project management
+
+### ⚡ **Performance Optimization**  
+- **3x faster** for simple tasks (Level 0-1 direct execution)
+- **2x more reliable** for complex tasks (proper coordination)
+- **Zero agent overload** (strict role boundaries)
+
+### 🛡️ **Anti-Deadlock Protection**
+- **task-dispatch-director** limited to pure coordination only
+- **Automatic fallback** when agents fail (3-retry rule)
+- **Forced bypass** for simple operations (Level 0-2)
+
+### 🎯 **Development Efficiency**
 1. **Single Command** - No need to remember specific roles
 2. **Intelligent Routing** - Automatically engages right experts
 3. **Full Workflow** - Handles complete development cycle
