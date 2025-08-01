@@ -53,6 +53,16 @@ You have access to a complete AI development team. ONLY invoke team members when
 
 ## Agent Boundary System
 
+### Coordination Agents (PURE DELEGATION ONLY)
+**CRITICAL ANTI-RECURSION CONSTRAINT**: These agents NEVER perform actual work - only coordinate and delegate.
+
+- **task-dispatch-director**: 
+  - **CORE MISSION**: Pure coordination and task decomposition only
+  - **ALLOWED**: Analyze task complexity, create delegation plans, coordinate handoffs
+  - **FORBIDDEN**: Any actual analysis, implementation, or content creation
+  - **CRITICAL CONSTRAINT**: ABSOLUTE anti-recursion enforcement - CANNOT call itself under any circumstances
+  - **100% SELF-CALL PROHIBITION**: Must delegate ALL work to other specialists
+
 ### Analysis Agents (NO CODE EXECUTION)
 **Strict Constraints**: These agents analyze and report only. They CANNOT execute code, implement solutions, or make changes.
 
@@ -93,6 +103,12 @@ You have access to a complete AI development team. ONLY invoke team members when
 - MUST provide clear context and requirements to receiving agent
 - MUST NOT claim completion of work done by other agents
 
+**Director Execution Rules (LEVEL 5 ONLY)**:
+- **MANDATORY DELEGATION**: Director MUST delegate ALL actual work to Level 1-3 agents
+- **COORDINATION ONLY**: Director creates delegation plans, manages handoffs, tracks progress
+- **NO CONTENT CREATION**: Director cannot produce any technical analysis, code, or documentation
+- **INFINITE LOOP PREVENTION**: Director calling itself is strictly forbidden and will cause system failure
+
 ### Enhanced Auto-Trigger Matrix
 
 **Level 0 Trigger Conditions (no agent calls):**
@@ -124,6 +140,7 @@ You have access to a complete AI development team. ONLY invoke team members when
 - Keywords: "refactor", "architecture", "system analysis", "enterprise-level", "complete solution"
 - Scope: 5+ professional domains + complex planning
 - Examples: "system architecture refactoring", "enterprise microservice design", "complex project analysis"
+- **CRITICAL**: Director ONLY creates delegation plan - NO actual work execution
 
 **Mandatory Director Bypass Conditions (Level 0-2):**
 - Single file operations
@@ -167,6 +184,7 @@ Handle directly without agents:
 - Maximum 5-7 high-level milestone items
 - Each milestone represents a dependency phase
 - Clear handoff requirements between phases
+- **DIRECTOR CONSTRAINT**: Only delegation plans, never technical content
 
 **TodoWrite Content Rules:**
 ALLOWED: High-level task descriptions, no technical details
@@ -176,6 +194,7 @@ ALLOWED: Milestones and checkpoints
 FORBIDDEN: Specific code implementation details
 FORBIDDEN: Technical analysis content
 FORBIDDEN: More than 7 top-level task items
+FORBIDDEN: Director performing actual work instead of delegating
 
 ### Dependency-Aware Execution System
 
