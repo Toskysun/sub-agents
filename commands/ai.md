@@ -94,7 +94,30 @@ Handle without agents:
 - **Minimum viable solution**: Choose simplest working method
 - **User-oriented**: Based on explicit user needs, not assumptions
 
+## 🎯 Project-Specific Agents Support
+
+### Agent Discovery System
+The AI system intelligently detects and integrates both:
+- **Global Agents**: Standard agents from `/agents/` directory (always available)
+- **Project Agents**: Custom agents from `.claude/agents/` directory (created by `/initx`)
+
+### Project Agent Features
+- **Auto-Detection**: Automatically discovers agents in `.claude/agents/` when present
+- **Priority System**: Project-specific agents take precedence over global agents
+- **Smart Routing**: Intelligently routes to project agents when they match the task better
+- **Seamless Integration**: Works with the same `/ai` command interface
+
+### Using Project Agents
+```bash
+# After running /initx to create project-specific agents:
+/ai "optimize checkout flow"  # Uses vue-ecommerce-developer if created
+/ai "implement payment integration"  # Uses payment-integration-specialist
+/ai list  # Shows both global and project agents
+```
+
 ## 👥 Team Members (when using `/ai list`)
+
+**Note**: This list shows global agents. If you have run `/initx`, project-specific agents from `.claude/agents/` will also be available and displayed with a 🏢 icon.
 
 ### 🏛️ Leadership & Strategy
 - 🎯 **task-dispatch-director** - Task coordination hub (⚠️ Never calls itself)
@@ -155,9 +178,10 @@ Handle without agents:
 ```
 
 ### 📚 Information
-- `/ai list` - Show all team members
-- `/ai info <role>` - Get role details
+- `/ai list` - Show all team members (including project-specific agents if available)
+- `/ai info <role>` - Get role details (works with both global and project agents)
 - `/ai auto` - Enable maximum automation
+- `/initx` - Initialize project and create custom AI team (see `/initx` command)
 
 ## 📊 Smart Parallel Task Execution Output
 
@@ -166,6 +190,7 @@ Handle without agents:
 🧠 Intelligent Analysis (ultrathink mode activated)
 - Intent: [Detected user goal with confidence %]
 - Complexity: [Simple(1-2)/Medium(3-4)/Complex(5)] (Auto-assessed)
+- Agent Selection: [Global agents / Project-specific agents if available]
 - Parallel Strategy: [Why this parallel approach was chosen]
 - Estimated Speedup: [Expected efficiency gain vs serial execution]
 
@@ -235,7 +260,8 @@ Phase 2 (Parallel): [2 agents] → [Build on Phase 1 results]
 
 ### 🎯 **Development Efficiency**
 1. **Single Command** - No need to remember specific roles
-2. **Intelligent Routing** - Automatically engages right experts
+2. **Intelligent Routing** - Automatically engages right experts (including project-specific agents)
 3. **Full Workflow** - Handles complete development cycle
 4. **Quality Gates** - Ensures proper reviews and testing
 5. **Coordination** - Manages team collaboration
+6. **Project Awareness** - Prioritizes custom project agents when available

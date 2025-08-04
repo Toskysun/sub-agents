@@ -23,6 +23,7 @@ This repository contains a powerful collection of specialized AI agents designed
 
 - **Enhanced Task Assessment**: 6-level (0-5) complexity evaluation with ultra-intelligent analysis (ultrathink mode)
 - **28+ Specialized Agents**: Comprehensive coverage of modern development technologies with strict role boundaries
+- **Project-Specific Agents**: `/initx` command creates custom agents tailored to your unique project requirements
 - **Agent Boundary System**: ALLOWED/FORBIDDEN pattern preventing scope creep and ensuring precision
 - **Dependency-Aware Execution**: Smart dependency detection with phase-based execution strategies
 - **Multi-Technology Support**: Vue.js, React, Go, Rust, Python, Android, Java, Security, and more
@@ -58,9 +59,57 @@ claude-ai-agents/
 │   ├── task-dispatch-director.md # Central coordinator
 │   └── ... (more agents)
 ├── commands/
-│   └── ai.md                   # AI team orchestration
+│   ├── ai.md                   # AI team orchestration
+│   └── initx.md                # Project-specific agent creation
 ├── CLAUDE.md                   # Core configuration
 └── README.md                   # This file
+```
+
+## 🚀 Project-Specific Agent System (`/initx`)
+
+### 🎯 Create Custom AI Teams for Your Project
+
+Beyond the global agents, you can create **project-specific agents** tailored to your exact requirements using the `/initx` command.
+
+#### Key Benefits:
+- **10x Faster Development**: Custom agents understand your specific business logic and tech stack
+- **Zero Learning Curve**: Agents pre-configured with your project patterns and conventions  
+- **Smart Collaboration**: Agents know your project's unique integration points and dependencies
+- **Domain Expertise**: Deep knowledge of your specific requirements and constraints
+
+#### Usage:
+```bash
+/initx                    # Analyze project and create custom agents
+/initx --preview         # Preview mode (no file creation)
+/initx --focus=security  # Create security-focused agents
+/initx --template=mobile # Use mobile project template
+/initx --model=inherit   # Force all agents to use specific model (inherit/sonnet/opus/haiku)
+```
+
+#### Intelligent Agent Creation:
+The system analyzes your project structure and creates specialized agents like:
+- `vue-ecommerce-developer` - Project-specific Vue expert for e-commerce
+- `payment-integration-specialist` - Custom payment API expert
+- `postgres-inventory-architect` - Database-specific data architect
+- `aws-deployment-specialist` - Platform-specific deployment expert
+
+#### Model Selection Options:
+- **Default**: Intelligent model selection based on agent complexity
+- **--model=inherit**: All agents inherit parent session model (best for cost control)
+- **--model=sonnet**: All agents use Sonnet (balanced performance)
+- **--model=opus**: All agents use Opus (maximum reasoning capability)
+- **--model=haiku**: All agents use Haiku (fastest response time)
+
+#### Generated Structure:
+```
+your_project/
+├── .claude/
+│   └── agents/                    # Project-specific agents
+│       ├── vue-ecommerce-developer.md
+│       ├── payment-integration-specialist.md
+│       └── postgres-inventory-architect.md
+├── CLAUDE.md                      # Updated with custom team
+└── .gitignore                     # Updated exclusions
 ```
 
 ## 🤖 Available Agents
@@ -135,14 +184,31 @@ claude-ai-agents/
 
 3. **Restart Claude Code** or reload configuration
 
+4. **(Optional) Create Project-Specific Agents**:
+   ```bash
+   # Navigate to your project directory
+   cd your_project
+   
+   # Analyze and create custom agents for your project
+   /initx
+   ```
+
 ### Usage Examples
 
-**Single Agent Tasks**:
+**Global Agent Tasks** (Available everywhere):
 ```
 /ai "Create a Vue.js dashboard component"
 /ai "Build a FastAPI authentication service"
 /ai "Design a Material Design mobile interface"
 /ai "Optimize Go microservice performance"
+```
+
+**Project-Specific Agent Tasks** (After running `/initx`):
+```
+/ai "optimize checkout flow"      # Uses vue-ecommerce-developer
+/ai "implement payment gateway"   # Uses payment-integration-specialist
+/ai "add inventory alerts"        # Uses postgres-inventory-architect
+/ai "deploy to production"        # Uses aws-deployment-specialist
 ```
 
 **Multi-Agent Coordination**:
@@ -154,12 +220,12 @@ claude-ai-agents/
 
 **Team Management**:
 ```
-/ai list          # Show all available agents
+/ai list          # Show all available agents (global + project)
 /ai info react    # Get React specialist details
-/ai workflow      # Display development workflows
+/initx --preview  # Preview custom agents for your project
 ```
 
-## 📋 Task Complexity Levels (ENHANCED)
+## 📋 Task Complexity Levels 
 
 | Level | Type | Description | Handling | Performance |
 |-------|------|-------------|----------|-------------|
@@ -225,6 +291,7 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 - **增强任务评估**: 6级 (0-5) 复杂度评估与超智能分析 (ultrathink模式)
 - **28+个专业代理**: 全面覆盖现代开发技术栈，配备严格的角色边界
+- **项目专属代理**: `/initx` 命令可创建专为您项目需求定制的自定义代理
 - **代理边界系统**: ALLOWED/FORBIDDEN模式防止职责蔓延，确保精准执行
 - **依赖感知执行**: 智能依赖检测与基于阶段的执行策略
 - **多技术栈支持**: Vue.js、React、Go、Rust、Python、Android、Java、安全分析等
@@ -260,9 +327,57 @@ claude-ai-agents/
 │   ├── task-dispatch-director.md # 中央协调器
 │   └── ... (更多代理)
 ├── commands/
-│   └── ai.md                   # AI团队编排
+│   ├── ai.md                   # AI团队编排
+│   └── initx.md                # 项目专属代理创建
 ├── CLAUDE.md                   # 核心配置
 └── README.md                   # 本文件
+```
+
+## 🚀 项目专属代理系统 (`/initx`)
+
+### 🎯 为您的项目创建定制AI团队
+
+除了全局代理外，您可以使用 `/initx` 命令创建**项目专属代理**，完全针对您的具体需求进行定制。
+
+#### 核心优势:
+- **10倍开发速度**: 定制代理理解您的特定业务逻辑和技术栈
+- **零学习成本**: 代理预配置了您的项目模式和约定
+- **智能协作**: 代理了解您项目独特的集成点和依赖关系
+- **领域专业**: 深入了解您的特定需求和约束
+
+#### 使用方法:
+```bash
+/initx                    # 分析项目并创建自定义代理
+/initx --preview         # 预览模式（不创建文件）
+/initx --focus=security  # 创建安全专注的代理
+/initx --template=mobile # 使用移动项目模板
+/initx --model=inherit   # 强制所有代理使用指定模型 (inherit/sonnet/opus/haiku)
+```
+
+#### 智能代理创建:
+系统分析您的项目结构并创建专业代理，例如：
+- `vue-ecommerce-developer` - 电商项目专属Vue专家
+- `payment-integration-specialist` - 定制支付API专家
+- `postgres-inventory-architect` - 数据库专属数据架构师
+- `aws-deployment-specialist` - 平台专属部署专家
+
+#### 模型选择选项:
+- **默认**: 基于代理复杂度的智能模型选择
+- **--model=inherit**: 所有代理继承父会话模型（最佳成本控制）
+- **--model=sonnet**: 所有代理使用Sonnet（平衡性能）
+- **--model=opus**: 所有代理使用Opus（最大推理能力）
+- **--model=haiku**: 所有代理使用Haiku（最快响应时间）
+
+#### 生成的结构:
+```
+your_project/
+├── .claude/
+│   └── agents/                    # 项目专属代理
+│       ├── vue-ecommerce-developer.md
+│       ├── payment-integration-specialist.md
+│       └── postgres-inventory-architect.md
+├── CLAUDE.md                      # 更新的自定义团队配置
+└── .gitignore                     # 更新的排除项
 ```
 
 ## 🤖 可用代理
@@ -337,14 +452,31 @@ claude-ai-agents/
 
 3. **重启Claude Code**或重新加载配置
 
+4. **（可选）创建项目专属代理**:
+   ```bash
+   # 导航到您的项目目录
+   cd your_project
+   
+   # 分析并为您的项目创建自定义代理
+   /initx
+   ```
+
 ### 使用示例
 
-**单一代理任务**:
+**全局代理任务**（随时可用）:
 ```
 /ai "创建一个Vue.js仪表板组件"
 /ai "构建一个FastAPI认证服务"
 /ai "设计一个Material Design移动界面"
 /ai "优化Go微服务性能"
+```
+
+**项目专属代理任务**（运行 `/initx` 后）:
+```
+/ai "优化结账流程"           # 使用 vue-ecommerce-developer
+/ai "实现支付网关"           # 使用 payment-integration-specialist
+/ai "添加库存警报"           # 使用 postgres-inventory-architect
+/ai "部署到生产环境"         # 使用 aws-deployment-specialist
 ```
 
 **多代理协调**:
@@ -356,12 +488,12 @@ claude-ai-agents/
 
 **团队管理**:
 ```
-/ai list          # 显示所有可用代理
+/ai list          # 显示所有可用代理（全局+项目）
 /ai info react    # 获取React专家详情
-/ai workflow      # 显示开发工作流程
+/initx --preview  # 预览您项目的自定义代理
 ```
 
-## 📋 任务复杂度级别 (增强版)
+## 📋 任务复杂度级别 
 
 | 级别 | 类型 | 描述 | 处理方式 | 性能优势 |
 |------|------|------|----------|----------|
