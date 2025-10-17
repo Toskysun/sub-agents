@@ -1,0 +1,27 @@
+{
+  "name": "universal",
+  "version": "1.0.0",
+  "description": "Universal AI agents collection for Claude Code - 28+ specialized agents with strict boundary enforcement, project-specific agent creation, and intelligent task routing",
+  "author": {
+    "name": "Toskysun",
+    "url": "https://github.com/Toskysun/sub-agents"
+  },
+  "homepage": "https://github.com/Toskysun/sub-agents",
+  "repository": "https://github.com/Toskysun/sub-agents",
+  "license": "MIT",
+  "keywords": [
+    "ai-agents",
+    "subagents",
+    "development-tools",
+    "vue",
+    "react",
+    "go",
+    "rust",
+    "python",
+    "android",
+    "security",
+    "architecture",
+    "task-automation",
+    "multi-agent-system"
+  ]
+}

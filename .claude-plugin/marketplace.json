@@ -1,0 +1,15 @@
+{
+  "name": "sub-agents",
+  "owner": {
+    "name": "Toskysun",
+    "url": "https://github.com/Toskysun"
+  },
+  "description": "Universal AI Agents Marketplace - comprehensive development agents with boundary enforcement",
+  "plugins": [
+    {
+      "name": "universal",
+      "source": "./",
+      "description": "Universal AI agents collection: 28+ specialized agents with strict boundary enforcement, project-specific agent creation (/initx), and intelligent task routing (Level 0-5 complexity assessment)"
+    }
+  ]
+}
